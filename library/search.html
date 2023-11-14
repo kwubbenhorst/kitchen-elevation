@@ -14,6 +14,26 @@
 <title>Search</title>
 </head>
 <body>
+    <div class="input-group">
+        <span class="input-group-text">Dish Name</span>
+        <input type="text" aria-label="Dish Name" class="form-control">
+      </div>
+      <div class="dropdown">
+          <label>Cuisine Type</label>
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cuisine Selection
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">American</a></li>
+            <li><a class="dropdown-item" href="#">Chinese</a></li>
+            <li><a class="dropdown-item" href="#">French</a></li>
+            <li><a class="dropdown-item" href="#">Italian</a></li>
+            <li><a class="dropdown-item" href="#">Japanese</a></li>
+            <li><a class="dropdown-item" href="#">Korean</a></li>
+            <li><a class="dropdown-item" href="#">Mexican</a></li>
+            <li><a class="dropdown-item" href="#">Thai</a></li>
+          </ul>
+        </div>
     <button type="button" id="search-btn" class="btn btn-primary">Search</button> <!--added a bootstrap button so I could test my js function as a handler function for a click event-->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
