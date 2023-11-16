@@ -1,33 +1,39 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  body, html {
-    height: 100%;
-    margin: 0;
-  }
+:root {
+--light-basil: #AAC38C;
+--dark-basil: #5F8C17;
+--lemon: #F3E060;
+--tomato: #C30A05;
+--salmon: #DC5D0C;
+--pestle: #C9C9C7; 
+}
 
-  .full-width-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; 
-  }
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
-  .full-width-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.full-width-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+}
 
-  
-
+.full-width-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 body {
-    font-family: 'Karla', sans-serif;
-    font-size: 16px;
-  }
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+}
 
 h1,
 h2,
@@ -35,167 +41,210 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Patrick Hand', sans-serif;
-  font-weight: 700;
+font-family: 'Patrick Hand', sans-serif;
+font-weight: 700;
 }
 
 .search-page-bg {
-  background-color: black;
+background-color: black;
 }
 
 .menus-page-bg {
-  background-color: #050400;
+background-color: #050400;
 }
 
 .results-page-bg {
-  background-color: #937063;
+background-color: #937063;
 }
 
 .favourites-page-bg {
-  background-color: black;
+background-color: black;
+}
+
+.results2-bg {
+background-image: url('../images/blackishbackground.jpg'); 
+background-position: center;
+background-repeat:no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%; 
 }
 
 .restaurant-menu-item-favourites {
-  margin-top: 20px;
-  color: white;
+margin-top: 20px;
+color: white;
 }
 
 .recipe-favourites {
-  color: white;
-  margin-top: 20px;
+color: white;
+margin-top: 20px;
+}
+
+.accordion-body {
+position: relative;
+}
+
+.accordion-button:not(.collapsed) {
+background-color: var(--light-basil);
+}
+
+.get {
+position: absolute;
+top: 75%;
+left: 90%;
+background-color: var(--dark-basil);
+}
+
+button.btn.btn-primary {
+background-color: var(--dark-basil);
+border-color: var(--light-basil);
 }
 
 
 
 
 .overlay-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
 }
 
 .webpage-title {
-  color: white; 
-  position: absolute;
-  bottom: 220px;
-  left: 29%;
-  font-size: 70px;
+color: var(--lemon); 
+position: absolute;
+bottom: 220px;
+left: 29%;
+font-size: 70px;
 }
 
 .webpage-title-menus-page {
-  color: white; 
-  position: absolute;
-  top: 50px;
-  left: 18%;
-  font-size: 60px;
+color: var(--lemon); 
+position: absolute;
+top: 50px;
+left: 18%;
+font-size: 60px;
 }
 
 .webpage-title-results-page {
-  color: white; 
-  font-size: 60px;
-  text-align: center;
-  margin-top: 20px;
+color: var(--lemon);
+font-size: 60px;
+text-align: center;
+margin-top: 20px;
+margin-left: 10%;
 }
 
 .webpage-title-favourites-page {
-  color: white; 
-  font-size: 60px;
-  text-align: center;
-  margin-top: 100px;
+color: var(--lemon); 
+font-size: 60px;
+text-align: center;
+margin-top: 100px;
 }
 
 .overview-blurb {
-  color: white;
-  position: absolute;
-  text-align: justify;
+color: white;
+position: absolute;
+text-align: justify;
 }
 
 #landing-page-blurb {
-  width: 90%;
-  bottom: 90px;
-  left: 5%;
+width: 90%;
+bottom: 90px;
+left: 5%;
 }
 
+
 #menus-page-blurb {
-  width: 50%;
-  top: 260px; 
-  left: 5%;
+width: 50%;
+top: 260px; 
+left: 5%;
 }
 
 #results-page-blurb {
-  position: static;
-  width: 100%;
-  margin-top: 20px;
+position: static;
+width: 100%;
+margin-top: 30px;
 }
 
 #favourites-page-blurb {
-  position: static;
-  width: 100%;
+position: static;
+width: 100%;
 }
 
 .input-group {
-  position: absolute;
-  width: 50%;
-  bottom: 30px;
-  left: 18%;
+position: absolute;
+width: 50%;
+bottom: 30px;
+left: 18%;
 
 }
 
 .input-group-menus-page {
-  left: 5%;
-  bottom: 120px;
+left: 5%;
+bottom: 120px;
 }
 
 #see-faves {
-  position: absolute;
-  bottom: 45px;
-  left: 75%;
-  background-color: light;
+position: absolute;
+bottom: 45px;
+left: 75%;
+background-color: light;
 }
 
 .page-link {
-  position: absolute;
-  top: 45px; 
-  left: 5%;
-  background-color: unset;
-  border-color: #B78C79;
-  color: #B78C79;
-  font-size: 32px;
+position: absolute;
+top: 45px; 
+left: 5%;
+background-color: unset;
+border-color: var(--dark-basil);
+color: var(--light-basil) 
+}
+
+a.page-link {
+color: var(--light-basil);
+font-size: 32px;
 }
 
 .back-btn {
-  position: absolute;
-  left: 5%;
+position: absolute;
+left: 5%;
 }
 
 .list-group {
-  color: white;
-  background-color: unset;
+color: white;
+background-color: var(--light-basil);
 }
 
-.list-group-item-action-active {
-  background-color: #2F0900;
+.list-group-item.active {
+background-color: var(--dark-basil);
 }
 
 .list-group-item {
-  background-color: unset;
-  color: #B78C79;
-  padding: 15px; 
+background-color: unset;
+color: black;
+padding: 15px; 
 }
 
 .cookbook-stack-img-container {
-  margin-left: 0;
+margin-left: 0;
 }
 
 #recipe-results-accordion {
-  margin-top: 20px;
+margin-top: 20px;
 }
 
 .button-container {
-  display: flex;
-  justify-content: space-around;
-  margin: 20px;
-  padding: 20px; 
+display: flex;
+justify-content: space-around;
+margin: 20px;
+padding: 20px; 
+}
+
+.accordion-body {
+background-color: var--(--dark-basil);
+}
+
+button.accordion-button {
+color: black;
+background-color: var(--lemon);
 }
