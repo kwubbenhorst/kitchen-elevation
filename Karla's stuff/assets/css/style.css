@@ -99,6 +99,10 @@ background-color: var(--dark-basil);
 border-color: var(--light-basil);
 }
 
+.card {
+  margin-top: 20px;
+}
+
 
 
 
