@@ -10,15 +10,71 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"> <!--needed for google fonts-->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--needed for google fonts-->
 <link href="https://fonts.googleapis.com/css2?family=Karla&family=Patrick+Hand&display=swap" rel="stylesheet"> <!--request to google fonts for the specific font families "Karla" and "Patrick Hand"-->
-<link rel="stylesheet" href="../assets/css/style.css" />
+<!--<link rel="stylesheet" href="../assets/css/style.css" />-->
 <title>Search</title>
 </head>
-<body>   
+<body class="search-page-bg">
+    <img src="../assets/images/salmon-with-ingredients-table.jpg" alt="Full Width Image of Salmon with Ingredients" class="img-fluid full-width-image">
+    <h1 class="webpage-title">Kitchen Elevation</h1>
+    <p class="overview-blurb" id="landing-page-blurb">Wondering what to do with that can of artichokes you've had since forever? Found halibut on sale this week, but need some inspiration for how to prepare it? Want to recreate the amazing fish tacos you had at that trendy new gastro-pub? Feel like you should eat more kale but don't know how to make it tasty? Search by ingredient keyword eg. "artichoke", "halibut", "kale" etc. or by dish name eg. "fish tacos" to see what's on the menu in some of the top restaurants across Canada. If you've been here before and have some favourites saved, you may wish to head straight to your personal recipe archive.</p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Ingredient keywords or dish name" aria-label="Ingredient keywords or dish name" aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary btn-landing-page" type="button" id="button-addon2">Search</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-primary" id="see-faves">See Favourites</button>
+        </div>
+    </div>
+    
     <button type="button" id="search-btn" class="btn btn-primary">Search</button> <!--added a bootstrap button so I could test my js function as a handler function for a click event-->
     <button type="button" id="recipe-btn" class="btn btn-primary">Recipe</button> <!--added a bootstrap button so I could test my js function as a handler function for a click event-->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="../assets/js/script1.js"></script>   
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="../assets/js/script.js"></script>   
+    <ul id="search-results" style="display: block; text-align: center;"> Search Results:
+    </ul>
 </body>
 </html>
+
+<!--
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="../assets/images/salmon-with-ingredients-table.jpg" alt="Full Width Image of Salmon with Ingredients" class="img-fluid full-width-image">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="webpage-title">Kitchen Elevation</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="overview-blurb" id="landing-page-blurb">Wondering what to do with that can of artichokes you've had since forever? Found halibut on sale this week, but need some inspiration for how to prepare it? Want to recreate that amazing saffron couscous you tried at the Persian restaurant? Feel like you should eat more kale but don't know how to make it tasty? Search by ingredient keyword eg. "artichoke", "halibut", "kale" etc. or by dish name eg. "saffron couscous" to see what's on the menu in some of the top restaurants across Canada.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Ingredient keywords or dish name" aria-label="Ingredient keywords or dish name" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary btn-landing-page" type="button" id="button-addon2">Search</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <button type="button" class="btn btn-primary">See Favourites</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="../assets/js/script1.js"></script>
+</body>
+-->
+

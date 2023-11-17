@@ -1,33 +1,99 @@
 //Karla's apiKey stored in a variable, and a variable dishName created to capture user input from the input box on the search page.  It is just set to "Maple Glazed Salmon" as a default for now so I can test this code. Button element created in search.html and stored in a variable here so I can listen for clicks on it 
 var apiKeySpnclr = "0d496145a03e4cdfb825d930b3633556";
-var apiKeyYelpFusn = "KFt9d65AEUW43oYGLpjKF8-Es3373cifbRG8ihm2cxtd5NtzffOoVrW0977HpELtSHQXIx2O5X5wTDuc1Z-QINlrJ5oVC0Okif7YEiYEvPNgJgY4FoQvYRb6aelNZXYx";
-var dishName = "saffron";
-var searchBtnEl = document.getElementById("search-btn");
-var recipeBtnEl = document.getElementById("recipe-btn");
- 
+var dishName = "cheeseburger";
+var searchBtnEl = document.getElementById("button-addon2");
+var menuItemsURL = `https://api.spoonacular.com/food/menuItems/search?query=${dishName}&apiKey=${apiKeySpnclr}`;
+    var recipesURL = `https://api.spoonacular.com/recipes/complexSearch?query=${dishName}&addRecipeNutrition=true&instructionsRequired=true&sort=popularity&sortDirection=desc&number=5&apiKey=${apiKeySpnclr}`;
 
 function renderSearchResults(allRecipeDetails) {
-    
-
-
-
+  
+  
+  
+  
 }
-//Nick takes over coding from here.  I have done the pseudocode
+//Nick takes over coding from here.  I have done the pseudocode //Triggered by a click from any GET button on p.2 (results2.html, click listener needs to be attached)
 function renderRecipeCards(allReturnedRecipes) {
 
-    //Iterate through the recipes array of objects so that recipes[i] lets you access each recipe individually
-    //Construct the cardRequestURL (see spoonacular's documentation for the Get Recipe Card end point). It requires a recipe id which you can express in terms of a variable ${recipes[i].id}. End the query string with &apiKey=${apiKeySpnclr}. 
-    //Do the fetch request, passing in cardRequestURL as a parameter
-    //In the second .then block log the response (should be an http URL which can be used as a src for rendering)
-    //Use createElement and appendChild to dynamically create the card elements and push data.url to them as the image src. You will want to do a document.location.replace so that results.html is now your document
-    //Do a catch method for handling any errors in the fetch request
-    }
+  //Iterate through the recipes array of objects so that recipes[i] lets you access each recipe individually
+  //Construct the cardRequestURL (see spoonacular's documentation for the Get Recipe Card end point). It requires a recipe id which you can express in terms of a variable ${recipes[i].id}. End the query string with &apiKey=${apiKeySpnclr}. 
+  //Do the fetch request, passing in cardRequestURL as a parameter
+  //In the second .then block log the response (should be an http URL which can be used as a src for rendering)
+  //Use createElement and appendChild to dynamically create the card elements and push data.url to them as the image src. You will want to do a document.location.replace so that results.html is now your document
+  //Do a catch method for handling any errors in the fetch request
+}
+// Select all elements with class "text-muted-heart-btn"
+var heartButtons = document.querySelectorAll('.text-muted-heart-btn');
 
-    //Function to getRecipes that will be called as an event handler function when submit button is hit on search page
+// Add click event listener to each heart button
+heartButtons.forEach(function (button) {
+  button.addEventListener('click', handleFavoriteClick);
+});
+
+function handleFavoriteClick(event) {
+  // Identify the clicked heart button
+  var clickedButton = event.target;
+
+  // Access relevant information, e.g., recipe title, ID
+  var recipeTitle = clickedButton.parentElement.querySelector('h5').textContent;
+  // var recipeId = /* Get the recipe ID from your data structure or DOM */
+
+  // Check if the item is already a favorite
+  var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+  var isFavorite = favorites.some(function (fav) {
+    return fav.id === recipeId;
+  });
+
+  // Toggle the favorite status
+  if (isFavorite) {
+    // Remove from favorites
+    favorites = favorites.filter(function (fav) {
+      return fav.id !== recipeId;
+    });
+  } else {
+    // Add to favorites
+    favorites.push({ id: recipeId, title: recipeTitle });
+  }
+
+  // Save the updated favorites to local storage
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+}
+//Function to getRecipes that will be called as an event handler function when submit button is hit on search page
 function getRecipes() { 
   // A fetch URL to get recipes from spoonacular api. Query parameters are hardcoded to limit recipes returned to 5, to sort by most popular and display them in descending order. Data will include full recipe instructions and nutritional info
-  var recipesURL = `https://api.spoonacular.com/recipes/complexSearch?query=${dishName}&addRecipeNutrition=true&instructionsRequired=true&sort=popularity&sortDirection=desc&number=5&apiKey=${apiKeySpnclr}`;
- 
+      
+      console.log("hello")
+      fetch(menuItemsURL)
+      .then(function (response) {
+        return response.json();
+      })
+      
+      .then(function (data) { 
+        var returnedResults = data;
+                console.log(returnedResults);
+        console.log("Restaurant Chain:")
+        for (let i = 0; i < returnedResults.menuItems.length; i++) {
+          console.log(i, returnedResults.menuItems[i].restaurantChain)         
+        }
+  
+        console.log("Menu Item Names:")
+        for (let i = 0; i < returnedResults.menuItems.length; i++) {
+          console.log(i, returnedResults.menuItems[i].title)
+        }
+  
+        console.log("Images:")
+        for (let i = 0; i < returnedResults.menuItems.length; i++) {
+          console.log(i, returnedResults.menuItems[i].image)
+        }
+  
+        // iterate over results and list serving sizes info with i as the array placement
+        console.log("Serving size:")
+        for (let i = 0; i < returnedResults.menuItems.length; i++) {
+          console.log(i, returnedResults.menuItems[i].servings, returnedResults.menuItems[i].unit)
+        }
+      })
+  
+    
   //Send a fetch request to get recipes.
   fetch(recipesURL)
     .then(function (response) {
@@ -135,14 +201,14 @@ console.log('Recipe details added:', allRecipeDetails);
 
 //Call the function which will render the search results on page 2 (results.html) 
     renderSearchResults(allRecipeDetails);
-     
 
 
+    
       }
     })
 };
 
 //Added an event listener to the search button on search.html to call the getRecipes function on click
-searchBtnEl.addEventListener("click", getRecipes);
+// searchBtnEl.addEventListener("click", getRecipes);
 
 recipeBtnEl.addEventListener("click", renderRecipeCards);
