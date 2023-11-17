@@ -60,8 +60,8 @@ function getRecipes() {
     });
 }
 
-//Added an event listener to the searchBtnEl (an simple bootstrap button element I created in search.html) so that I can call the getRecipes function on click
-searchBtnEl.addEventListener("click", getRecipes);
+// //Added an event listener to the searchBtnEl (an simple bootstrap button element I created in search.html) so that I can call the getRecipes function on click
+// searchBtnEl.addEventListener("click", getRecipes);
 
 
 

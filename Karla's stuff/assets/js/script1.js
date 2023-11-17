@@ -23,10 +23,47 @@ function renderRecipeCards(allReturnedRecipes) {
   //Use createElement and appendChild to dynamically create the card elements and push data.url to them as the image src. You will want to do a document.location.replace so that results.html is now your document
   //Do a catch method for handling any errors in the fetch request
 }
+// Select all elements with class "text-muted-heart-btn"
+var heartButtons = document.querySelectorAll('.text-muted-heart-btn');
 
+// Add click event listener to each heart button
+heartButtons.forEach(function (button) {
+  button.addEventListener('click', handleFavoriteClick);
+});
+
+function handleFavoriteClick(event) {
+  // Identify the clicked heart button
+  var clickedButton = event.target;
+
+  // Access relevant information, e.g., recipe title, ID
+  var recipeTitle = clickedButton.parentElement.querySelector('h5').textContent;
+  // var recipeId = /* Get the recipe ID from your data structure or DOM */
+
+  // Check if the item is already a favorite
+  var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+  var isFavorite = favorites.some(function (fav) {
+    return fav.id === recipeId;
+  });
+
+  // Toggle the favorite status
+  if (isFavorite) {
+    // Remove from favorites
+    favorites = favorites.filter(function (fav) {
+      return fav.id !== recipeId;
+    });
+  } else {
+    // Add to favorites
+    favorites.push({ id: recipeId, title: recipeTitle });
+  }
+
+  // Save the updated favorites to local storage
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+}
 //Function to getRecipes that will be called as an event handler function when submit button is hit on search page
 function getRecipes() { 
   // A fetch URL to get recipes from spoonacular api. Query parameters are hardcoded to limit recipes returned to 5, to sort by most popular and display them in descending order. Data will include full recipe instructions and nutritional info
+      
       console.log("hello")
       fetch(menuItemsURL)
       .then(function (response) {
@@ -166,14 +203,14 @@ console.log('Recipe details added:', allRecipeDetails);
 
 //Call the function which will render the search results on page 2 (results.html) 
     renderSearchResults(allRecipeDetails);
-     
 
 
+    
       }
     })
 };
 
 //Added an event listener to the search button on search.html to call the getRecipes function on click
-searchBtnEl.addEventListener("click", getRecipes);
+// searchBtnEl.addEventListener("click", getRecipes);
 
-recipeBtnEl.addEventListener("click", renderRecipeCards);
+// recipeBtnEl.addEventListener("click", renderRecipeCards);
