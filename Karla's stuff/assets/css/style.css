@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+  .full-width-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+  }
+
+  .full-width-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  
+
+
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+  }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Patrick Hand', sans-serif;
+  font-weight: 700;
+}
+
+.search-page-bg {
+  background-color: black;
+}
+
+.menus-page-bg {
+  background-color: #050400;
+}
+
+.results-page-bg {
+  background-color: #937063;
+}
+
+.favourites-page-bg {
+  background-color: black;
+}
+
+.restaurant-menu-item-favourites {
+  margin-top: 20px;
+  color: white;
+}
+
+.recipe-favourites {
+  color: white;
+  margin-top: 20px;
+}
+
+
+
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.webpage-title {
+  color: white; 
+  position: absolute;
+  bottom: 220px;
+  left: 29%;
+  font-size: 70px;
+}
+
+.webpage-title-menus-page {
+  color: white; 
+  position: absolute;
+  top: 50px;
+  left: 18%;
+  font-size: 60px;
+}
+
+.webpage-title-results-page {
+  color: white; 
+  font-size: 60px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.webpage-title-favourites-page {
+  color: white; 
+  font-size: 60px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.overview-blurb {
+  color: white;
+  position: absolute;
+  text-align: justify;
+}
+
+#landing-page-blurb {
+  width: 90%;
+  bottom: 90px;
+  left: 5%;
+}
+
+#menus-page-blurb {
+  width: 50%;
+  top: 260px; 
+  left: 5%;
+}
+
+#results-page-blurb {
+  position: static;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#favourites-page-blurb {
+  position: static;
+  width: 100%;
+}
+
+.input-group {
+  position: absolute;
+  width: 50%;
+  bottom: 30px;
+  left: 18%;
+
+}
+
+.input-group-menus-page {
+  left: 5%;
+  bottom: 120px;
+}
+
+#see-faves {
+  position: absolute;
+  bottom: 45px;
+  left: 75%;
+  background-color: light;
+}
+
+.page-link {
+  position: absolute;
+  top: 45px; 
+  left: 5%;
+  background-color: unset;
+  border-color: #B78C79;
+  color: #B78C79;
+  font-size: 32px;
+}
+
+.back-btn {
+  position: absolute;
+  left: 5%;
+}
+
+.list-group {
+  color: white;
+  background-color: unset;
+}
+
+.list-group-item-action-active {
+  background-color: #2F0900;
+}
+
+.list-group-item {
+  background-color: unset;
+  color: #B78C79;
+  padding: 15px; 
+}
+
+.cookbook-stack-img-container {
+  margin-left: 0;
+}
+
+#recipe-results-accordion {
+  margin-top: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  padding: 20px; 
+}

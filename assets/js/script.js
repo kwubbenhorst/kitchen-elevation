@@ -2,9 +2,36 @@
 var apiKeySpnclr = "0d496145a03e4cdfb825d930b3633556";
 var dishName = "chili con carne";
 var searchBtnEl = document.getElementById("search-btn");
+const recipeCardContainer = document.getElementById('recipe-container');
 
 //Nick takes over coding from here.  I have done the pseudocode
 function renderRecipeCards(recipes) {
+const apiUrl = `https://api.spoonacular.com/recipes/${recipes.id}/information?apiKey=${apiKeySpnclr}`;
+fetch(apiUrl)
+.then(response => response.json())
+.then(data =>
+  {
+    if (data) {
+      const recipeCardHTML = `
+      <div class="recipe-card">
+          <h2>${data.title}</h2>
+          <ul>
+              ${data.extendedIngredients.map(ingredient => `<li>${ingredient.original}</li>`).join('')}
+          </ul>
+          <p>${data.instructions || 'No instructions available.'}</p>
+      </div>
+  `
+  recipeCardContainer.innerHTML = recipeCardHTML;
+    
+    }
+    else{
+      recipeCardContainer.textContent = 'Recipe not found.';
+    }
+
+  })
+  .catch(error =>{
+    console.error('Error fetching recipe details',error);
+  });
 
 //Iterate through the recipes array of objects so that recipes[i] lets you access each recipe individually
 //Construct the cardRequestURL (see spoonacular's documentation for the Get Recipe Card end point). It requires a recipe id which you can express in terms of a variable ${recipes[i].id}. End the query string with &apiKey=${apiKeySpnclr}. 
@@ -52,6 +79,8 @@ function getRecipes() {
 
         //Call the function with the second chained asynchronous fetch request to get the recipe rendered on a card for us.
         renderRecipeCards(recipes);
+      
+
       }
     })
     .catch(function (error) {
