@@ -1,9 +1,7 @@
 //Karla's apiKey stored in a variable, and a variable dishName created to capture user input from the input box on the search page.  It is just set to "Maple Glazed Salmon" as a default for now so I can test this code. Button element created in search.html and stored in a variable here so I can listen for clicks on it 
 var apiKeySpnclr = "0d496145a03e4cdfb825d930b3633556";
-var apiKeyYelpFusn = "KFt9d65AEUW43oYGLpjKF8-Es3373cifbRG8ihm2cxtd5NtzffOoVrW0977HpELtSHQXIx2O5X5wTDuc1Z-QINlrJ5oVC0Okif7YEiYEvPNgJgY4FoQvYRb6aelNZXYx";
 var dishName = "cheeseburger";
-var searchBtnEl = document.getElementById("search-btn");
-var recipeBtnEl = document.getElementById("recipe-btn");
+var searchBtnEl = document.getElementById("button-addon2");
 var menuItemsURL = `https://api.spoonacular.com/food/menuItems/search?query=${dishName}&apiKey=${apiKeySpnclr}`;
     var recipesURL = `https://api.spoonacular.com/recipes/complexSearch?query=${dishName}&addRecipeNutrition=true&instructionsRequired=true&sort=popularity&sortDirection=desc&number=5&apiKey=${apiKeySpnclr}`;
 
@@ -13,7 +11,7 @@ function renderSearchResults(allRecipeDetails) {
   
   
 }
-//Nick takes over coding from here.  I have done the pseudocode
+//Nick takes over coding from here.  I have done the pseudocode //Triggered by a click from any GET button on p.2 (results2.html, click listener needs to be attached)
 function renderRecipeCards(allReturnedRecipes) {
 
   //Iterate through the recipes array of objects so that recipes[i] lets you access each recipe individually
@@ -213,4 +211,4 @@ console.log('Recipe details added:', allRecipeDetails);
 //Added an event listener to the search button on search.html to call the getRecipes function on click
 // searchBtnEl.addEventListener("click", getRecipes);
 
-// recipeBtnEl.addEventListener("click", renderRecipeCards);
+recipeBtnEl.addEventListener("click", renderRecipeCards);
