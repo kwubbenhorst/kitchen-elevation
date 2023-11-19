@@ -4,7 +4,8 @@ var dishName = "cheeseburger";
 var searchBtnEl = document.getElementById("button-addon2");
 var menuItemsURL = `https://api.spoonacular.com/food/menuItems/search?query=${dishName}&apiKey=${apiKeySpnclr}`;
     var recipesURL = `https://api.spoonacular.com/recipes/complexSearch?query=${dishName}&addRecipeNutrition=true&instructionsRequired=true&sort=popularity&sortDirection=desc&number=5&apiKey=${apiKeySpnclr}`;
-
+    var accordian = document.querySelector(".accordian");
+    var recipeCards = document.querySelector(".recipe-card");
 function renderSearchResults(allRecipeDetails) {
   
   
@@ -14,6 +15,14 @@ function renderSearchResults(allRecipeDetails) {
 //Nick takes over coding from here.  I have done the pseudocode //Triggered by a click from any GET button on p.2 (results2.html, click listener needs to be attached)
 function renderRecipeCards(allReturnedRecipes) {
 
+  accordian.classList.add("hide");
+  recipeCards.classList.remove("hide");
+   $(".recipe-card-header").text = allReturnedRecipes.title;   
+   $(".recipe-card-servings").text = allReturnedRecipes.servings + "Ready in " + allReturnedRecipes.readyInMinutes; 
+   $(".recipe-card-image").attr("src", allReturnedRecipes.image);
+   $(".recipe-card-ingredient-list").text = allReturnedRecipes.ingredients;
+   $(".recipe-card-methods").text = allReturnedRecipes.steps;
+   $(".recipe-card-url").attr("href",allReturnedRecipes.sourceUrl);
   //Iterate through the recipes array of objects so that recipes[i] lets you access each recipe individually
   //Construct the cardRequestURL (see spoonacular's documentation for the Get Recipe Card end point). It requires a recipe id which you can express in terms of a variable ${recipes[i].id}. End the query string with &apiKey=${apiKeySpnclr}. 
   //Do the fetch request, passing in cardRequestURL as a parameter
