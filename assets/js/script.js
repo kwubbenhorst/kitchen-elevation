@@ -1,17 +1,15 @@
 //Karla's apiKey stored in a variable, and a variable dishName created to capture user input from the input box on the search page.  It is just set to "Maple Glazed Salmon" as a default for now so I can test this code. Button element created in search.html and stored in a variable here so I can listen for clicks on it 
-var apiKeySpnclr = "0d496145a03e4cdfb825d930b3633556";
+var apiKeySpnclr = "203eda98b18c453094040f9aa702faf6";
 var apiKeyYelpFusn = "KFt9d65AEUW43oYGLpjKF8-Es3373cifbRG8ihm2cxtd5NtzffOoVrW0977HpELtSHQXIx2O5X5wTDuc1Z-QINlrJ5oVC0Okif7YEiYEvPNgJgY4FoQvYRb6aelNZXYx";
 var dishName = "cheeseburger";
 var searchBtnEl = document.getElementById("search-btn");
 var recipeBtnEl = document.getElementById("recipe-btn");
 var menuItemsURL = `https://api.spoonacular.com/food/menuItems/search?query=${dishName}&apiKey=${apiKeySpnclr}`;
     var recipesURL = `https://api.spoonacular.com/recipes/complexSearch?query=${dishName}&addRecipeNutrition=true&instructionsRequired=true&sort=popularity&sortDirection=desc&number=5&apiKey=${apiKeySpnclr}`;
-
+    var returnedResults = "";
+    var returnedRecipeResults = "";
+    var iterateCounter = 0;
 function renderSearchResults(allRecipeDetails) {
-  
-  
-  
-  
 }
 //Nick takes over coding from here.  I have done the pseudocode
 function renderRecipeCards(allReturnedRecipes) {
@@ -54,32 +52,30 @@ function getRecipes() {
         
         // iterate over results and list serving sizes info with i as the array placement
         console.log("Serving size:")
-        
-        // adds list items to search results on search.html for each iteration
-        var searchResult = ""
-        var listItem = "returnedResults.menuItems[i].title"
-        function getItemListed() {
-          
-          var value = `Item #${i}`;
-          value.textContent = (returnedResults.menuItems[i]);
-  var li = document.createElement("li");
-  li.textContent = value;
-  var listItem = document.getElementById("search-results").appendChild(li);
-  for (var i = 0; i < listItem.length;i++){
-    li += " X ";
-  }
-           
-  }
-        for (var i = 0; i < returnedResults.menuItems.length; i++) {
-          
-          getItemListed();
-          
-        }
 
-        
-      })
+        // adds list items to search results on search.html for each iteration
+        //var searchResult = ""
+                //var listItem = "";
+                function getItemListed() {
+          
+                  //recipeData.title
       
-      //Send a fetch request to get recipes.
+                  var li = document.createElement("li");
+                  li.textContent = returnedResults.menuItems[iterateCounter].title;
+                  var listItem = document.getElementById("search-results").appendChild(li);
+                  var li2 = document.createElement("li");
+                  li2.textContent = returnedResults.menuItems[iterateCounter].title;
+                  var listItem2 = document.getElementById("search-results-recipes").appendChild(li2);
+                  iterateCounter++;
+        }
+              for (var i = 0; i < returnedResults.menuItems.length; i++) {
+                getItemListed();
+                
+              }
+      
+              
+            })
+                  //Send a fetch request to get recipes.
       fetch(recipesURL)
     .then(function (response) {
       return response.json();
