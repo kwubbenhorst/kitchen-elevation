@@ -80,7 +80,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <h1 class="webpage-title-results-page">Get the Recipe!</h1>
                 <!-- Add "See Favourites" button here -->
-                <button type="button" class="btn btn-primary">See Favourites</button>
+                <button type="button" class="btn btn-primary faves" id="see-faves-2">See Favourites</button>
             </div>
                 <h2 class="byline"></h2>
                 <p class="overview-blurb" id="results-page-blurb">Check out each recipe's listing, including nutritional and other details. When you decide on what you want to make, click the "get" button in the recipe description and a recipe card will appear. You'll have a chance on the recipe card itself to mark it as a favourite.</p>
@@ -99,11 +99,10 @@
                     
                 
               <!-- Accordion -->
-              <div class="accordion" id="recipe-results-accordion">
-                <div class="accordion-item">
+              <div class="accordion common-element-class" id="recipe-results-accordion">
+                <div class="accordion-item" id="accordion-item-1">
                   <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Recipe Result #1
                     </button>
                   </h2>
                   <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -114,10 +113,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item" id="accordion-item-2">
                   <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Recipe Result #2
                     </button>
                   </h2>
                   <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -128,10 +126,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item" id="accordion-item-3">
                   <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Recipe Result #3
                     </button>
                   </h2>
                   <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -142,10 +139,9 @@
                   </div>
                   </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item" id="accordion-item-4">
                   <h2 class="accordion-header" id="headingFour">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      Recipe Result #4
                     </button>
                   </h2>
                   <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
@@ -156,10 +152,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item" id="accordion-item-5">
                   <h2 class="accordion-header" id="headingFive">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                      Recipe Result #5
                     </button>
                   </h2>
                   <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
@@ -170,7 +165,25 @@
                     </div>
                   </div>
                 </div>
-                <div class="card">
+              </div>
+              <div class="recipe-card-container">
+                <div class="recipe-card">
+                  <h1 class="recipe-title"><strong>  </strong></h1>
+                  <button class="heart-btn">❤️</button>
+                  <h2 class="serves-and-time"></h2>
+                  <img class="dish-image">
+                  <h2><strong>Ingredients:</strong></h2>
+                  <ul class="ingredients-list">
+                  </ul>
+                  <h2><strong>Method:</strong></h2>
+                  <ul class="method-steps-list">
+                  </ul>
+                  <h3 class="source">
+                    <a class="source-link"></a>
+                  </h3>
+                </div>
+              </div>
+              <div class="card">
                 <div class="card-header">May we suggest...</div>
                 <div class="card-body">
                   <blockquote class="blockquote mb-0">
@@ -178,7 +191,6 @@
                   <footer class="blockquote-footer">Goes great with <cite title="Source Title">push searched for dish name in here</cite></footer>
                   </blockquote>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -187,6 +199,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="../assets/js/script1.js"></script>
+    <script src="../assets/js/script4.js"></script>
 </body>
 </html>
