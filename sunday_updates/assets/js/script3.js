@@ -424,6 +424,12 @@ domReady(function () {
                     console.error('Error in getRecipes:', error);
                 });
         }
+        
+        else if (commonElement.id === 'back-to-search-1') {
+          console.log('back button clicked');
+          window.location.href = '/library/search.html';
+
+        }
     }
 });
 });
