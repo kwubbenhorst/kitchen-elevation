@@ -166,10 +166,6 @@ function renderRecipeDetails(allRecipeDetails) {
   // Append the "Get" button after the pre element
   accordionBodyEl.appendChild(getButton);
   
-  // Update the h1 element with id "title-recipes-half-page"
-  titleRecipesHalfPage.textContent = 'Get Cookin\'!';
-  // Update the p element with id "recipes-blurb"
-  recipesBlurb.textContent = 'Hopefully this recipe is perfect. If you love it, you can save it to “Favourites” by clicking the heart. If it’s not to your liking, use the back button to return to the list of your search results, and get another. Meanwhile, why not mix a cocktail?';
 } else {
     // If there's no corresponding recipe detail, clear the accordion title and body
     accordionHeaderEl.querySelector('button').textContent = '';
@@ -272,7 +268,7 @@ backNavButton.addEventListener('click', function () {
 heartBtnEl.addEventListener("click", handleFavouriting);
 
 backToSearchButton1.addEventListener('click', function() {
-    window.location.href = '../library/search.html';
+    window.location.href = '../index.html';
   });
 
 seeFavesButton2.addEventListener("click", function () {

@@ -441,27 +441,6 @@ a:active {
 
 
 
-.ingredients-list-col-left {
- 
-}
-
-.ingredients-list-col-right {
-  
-}
-
-.recipe-card-ingredients-row::after {
-  
-}
-
-
-.ingredients-list-col-left {
-
-}
-
-.ingredients-list-col-right {
-
-}
-
 .favourites-list-1 {
   color: var(--light-basil);
   margin-right: 20px;
@@ -492,7 +471,7 @@ a:active {
 }
 
 .faves-right-col li {
-  background-color: var(--salmon);
+  background-color: var(--dark-basil);
   color: var(--light-basil);
   margin-bottom: 10px;
   padding: 10px;

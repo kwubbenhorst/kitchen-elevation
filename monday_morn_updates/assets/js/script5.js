@@ -104,7 +104,7 @@ function handleItemClick(itemElement, title) {
 
     // Event listeners
   document.getElementById("back-to-search-2").addEventListener("click", function () {
-    window.location.href = "../library/search.html";
+    window.location.href = "../index.html";
   });
 
   //Clear-all button click handler, replaces the lists with the carousel and credits.

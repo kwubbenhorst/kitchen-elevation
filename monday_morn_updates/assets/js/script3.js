@@ -83,7 +83,7 @@ function renderRecipeDetails(allRecipeDetails) {
     resolve();
     }, 100); // Adjust the delay as needed
     console.log("Recipe details rendered successfully");
-    window.location.href = '../library/results2.html';  //Switches the html
+    window.location.href = 'library/results2.html';  //Switches the html
     });
 
 }
@@ -374,7 +374,7 @@ domReady(function () {
           console.log('See Faves button clicked.');
 
           // Redirect to the favorites page
-          window.location.href = '../library/favourites.html';
+          window.location.href = 'library/favourites.html';
       } else {
         // Check if the clicked element is a common element on both pages
         var commonElement = event.target.closest('.common-element-class');
@@ -391,22 +391,17 @@ domReady(function () {
                 .then(function (allRecipeDetails) {
                     console.log('getRecipes completed successfully:', allRecipeDetails);
 
-                    /*// Add a delay before swapping out search.html to results2.html
-                    setTimeout(function () {*/
+                    if (allRecipeDetails.length === 0) {
+                      //Show the modal if there are no results
+                      var modalElement = document.querySelector('.modal.fade#searchModal');
+                      console.log('Modal Element:', modalElement); //checks if the element is correctly selected
+                      var modal = new bootstrap.Modal(modalElement);
+                      modal.show();
+                    } else {
                         // Call renderRecipeDetails to render recipe details
-                        renderRecipeDetails(allRecipeDetails)
-                            /*.then(function () {
-                                console.log('renderRecipeDetails completed successfully.');
-                                // Now redirect to results2.html
-                                window.location.href = '/library/results2.html';
-                            })
-                            .catch(function (error) {
-                                console.error('Error in renderRecipeDetails', error);
-                            });
-                            */
+                        renderRecipeDetails(allRecipeDetails);
                             window.location.href = '/library/results2.html';
-                    /*}, 0); // No delay*/
-                })
+                }})
                 .catch(function (error) {
                     console.error('Error in getRecipes:', error);
                 });
