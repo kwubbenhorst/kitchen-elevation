@@ -12,14 +12,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--needed for google fonts-->
 <link href="https://fonts.googleapis.com/css2?family=Karla&family=Patrick+Hand&display=swap" rel="stylesheet"> <!--request to google fonts for the specific font families "Karla" and "Patrick Hand"-->
 
-<title>Copy That Dish</title>
+<title>Kitchen Elevation - Gourmet Simplified!</title>
 </head>
 <body>
     <div class="container text-center">
         <!-- High level header breaks to capture banner layout -->
         <!-- Stack the columns on mobile by making one full-width and the other half-width -->
         <div class="row">
-          <div class="col-md-8"><img src="./assets/images/KitchenElevationLogo.png" alt="Kitchen Elevation Logo" height="700 px"></div>
+          <div class="col-md-8"><img src="./assets/images/KitchenElevationLogo.png" alt="Kitchen Elevation Logo" height="450px"></div>
           <div class="col-6 col-md-4">Sign In | Register</div>
         </div>
         <!-- Setup of iFrames to reference different html files to be displayed under index.html -->
@@ -27,9 +27,11 @@
         <div class="row">
           <div class="col-6">
             <div class="ratio ratio-4x3">
-                <iframe src="./DrinkSearch/index.html" title="Search Page"></iframe>
+                <iframe src="./sunday_updates/library/search.html" title="Recipe Search"></iframe>
               </div>
-          <div class="col-6">Recent Recipes</div>
+          <div class="col-6">
+            <iframe src="./sunday_updates/library/favourites.html" title="Recipe Favourites"></iframe>
+          </div>
         </div>
       </div>
 

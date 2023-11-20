@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Karla&family=Patrick+Hand&display=swap" rel="stylesheet"> <!--request to google fonts for the specific font families "Karla" and "Patrick Hand"-->
 <link rel="stylesheet" href="../assets/css/style.css"/>
 <title>Results</title>
+<script type="text/javascript" src="../assets/js/DrinkSearch.js" defer></script>
 </head>
 <body class = "results2-bg"> 
     <div class="container">
@@ -208,13 +209,38 @@
             <!--END OF RECIPE CARD CONTAINER-->
             <!--COCKTAIL SUGGESTION CARD-->
             <div class="card">
-              <div class="card-header">May we suggest...</div>
-              <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                <p>Name of cocktail and how to make it</p>
-                <footer class="blockquote-footer">Goes great with <cite title="Source Title">push searched for dish name in here</cite></footer>
-                </blockquote>
-              </div>
+              <div class="card-header">
+                <!-- Button trigger to call on displayDrink() function to pull random cocktail suggestion -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="displayDrink()">
+                  Want a Cocktail Suggestion?
+                </button>
+                <!-- Leveraging bootstrap modal to display suggested cocktail recipe -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <!-- Embedded drinkName into the title display of the modal pop-up -->
+                        <h1 class="modal-title fs-1" id="drinkName"></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body" id="displayDrink">
+
+                        <!-- To display select drinkImage, drinkType, drinkGlassWare, and drinkInstructions into the content for display -->
+                        <img id="drinkImage" width="200px"></img>
+                        <p class="fw-bold">Type of Drink:</p>
+                        <p id="drinkType"></p>
+                        <p class="fw-bold">Glassware:</p>
+                        <p id="drinkGlassWare"></p>
+                        <p class="fw-bold">Recipe Instructions:</p>
+                        <p id="drinkInstructions"></p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
             <!--END OF COCKTAIL SUGGESTION CARD-->
           </div>
         <!--END OF RIGHT COLUMN-->
