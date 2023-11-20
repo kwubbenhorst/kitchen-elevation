@@ -11,26 +11,31 @@
 
     <!-- Reference to Bootstrap CDN and DrinkSearch.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    
+    <!-- Button trigger to call on displayDrink() function to pull random cocktail suggestion -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="displayDrink()">
       Recommend a Drink
     </button>
 
-    <!-- Leveraging bootstrap to insert a modal to display suggested cocktail recipe -->
+    <!-- Leveraging bootstrap modal to display suggested cocktail recipe -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Cocktail Suggestion</h1>
+            <!-- Embedded drinkName into the title display of the modal pop-up -->
+            <h1 class="modal-title fs-1" id="drinkName"></h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body" id="displayDrink">
-            <!-- To display JSON variables into the content for modal display -->
-            <p>${drinkName}</p>
-            <p>${drinkName}</p>
-            <p>${drinkType}</p>
-            <p>${drinkGlassWare}</p>
-            <p>${drinkInstructions}</p>
+
+            <!-- To display select drinkImage, drinkType, drinkGlassWare, and drinkInstructions into the content for display -->
+            <img id="drinkImage" width="200px"></img>
+            <p class="fw-bold">Type of Drink:</p>
+            <p id="drinkType"></p>
+            <p class="fw-bold">Glassware:</p>
+            <p id="drinkGlassWare"></p>
+            <p class="fw-bold">Recipe Instructions:</p>
+            <p id="drinkInstructions"></p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
@@ -39,10 +44,5 @@
       </div>
     </div>
 
-    <script>
-    // Insert script here
-     
-    </script>
-    
 </body>
 </html>
