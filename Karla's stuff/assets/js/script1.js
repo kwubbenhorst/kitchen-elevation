@@ -1,6 +1,6 @@
 //Karla's apiKey stored in a variable, and a variable dishName created to capture user input from the input box on the search page.  It is just set to "Maple Glazed Salmon" as a default for now so I can test this code. Button element created in search.html and stored in a variable here so I can listen for clicks on it 
 var apiKeySpnclr = "0d496145a03e4cdfb825d930b3633556";
-var dishName = "cheeseburger";
+var dishName = "saffron";
 var searchBtnEl = document.getElementById("button-addon2");
 var menuItemsURL = `https://api.spoonacular.com/food/menuItems/search?query=${dishName}&apiKey=${apiKeySpnclr}`;
     var recipesURL = `https://api.spoonacular.com/recipes/complexSearch?query=${dishName}&addRecipeNutrition=true&instructionsRequired=true&sort=popularity&sortDirection=desc&number=5&apiKey=${apiKeySpnclr}`;
@@ -218,6 +218,6 @@ console.log('Recipe details added:', allRecipeDetails);
 };
 
 //Added an event listener to the search button on search.html to call the getRecipes function on click
-// searchBtnEl.addEventListener("click", getRecipes);
+searchBtnEl.addEventListener("click", getRecipes);
 
-recipeBtnEl.addEventListener("click", renderRecipeCards);
+
